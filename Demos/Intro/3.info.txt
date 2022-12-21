@@ -1,0 +1,13 @@
+
+********** BASES de JAVASCRIPT **********
+
+******  Chapitre 3.12 : Variables VAR ******
+Variables :
+Var / let / CONST
+
+Hoisting
+Types
+Opérateurs
+Coercition
+Scope, Contexte d'exécution
+Référence et valeur

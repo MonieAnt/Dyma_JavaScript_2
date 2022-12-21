@@ -1,0 +1,154 @@
+
+********** INTRO JAVASCRIPT **********
+
+Au début animations en plus d'HTML et CSS
+
+Brendan Eich créateur de JS
+
+Importance de JS depuis invention de XMLHttpRequest
+Récupérer Data depuis serveur sans rafraichir page client.
+
+Seul langage que comprend les navigateurs.
+Aucune chance que le JS disparaisse.
+
+FrameWorks Front :
+Angular / React / Vue.js
+Single page applications.
+
+Serveur Web : 
+Node.js
+
+FrameWorks Back :
+Express
+
+Base de données :
+MongoDB
+
+Scraping :
+Phantom.js / Casper.js
+
+
+--- Fonctionnement ---
+
+Faiblement typé & interprété
+
+Langage compilé :
+{code} --> compilateur --> 01101001101011 --> Exécutable
+
+Langage interprété :
+{code} --> interpréteur --> Exécute
+
+Ordre du code à une importance !
+Instruction 1;
+Instruction 2;      
+Instruction 3;
+
+Ex d'interpréteur :
+- Les naviagteurs (Google Chrome : V8, FireFox : SpiderMonkey, Safari : Nitro)
+- Serveurs (NodeJS avec V8)
+
+Faiblement typé :
+Type variable va être défini au moment de l'exécutiton 
+et pas au moment de l'interprétation.
+Peut varier au cours de l'exécution.
+
+
+--- Historique de JS ---
+
+ECMAScript vs JavaScript ?
+European Computer Manufacturer's Association == Standard (règle de scripting)
+ECMAScript = Ensemble des standards définis.
+
+JavaScript == Langage qui suit le standard ECMAScript.
+
+Pourquoi un Standard ?
+Pour que les navigateurs fournissent le même résultat à un code donné.
+
+Babel est un outil qui récupère l'intégralité des features des ES pour le convertir vers l'ES compris par tous les naviagateurs.
+            _____________
+ES2015 -->  |           |
+ES2016 -->  |   BABEL   |   --> ES2015
+ES2017 -->  |           |
+ES2018 -->  |___________|
+
+
+******  Chapitre 2 : Mise en place environnement ******
+
+- Différents outils :
+Editeur VS Code
+Babel
+NPM
+Webpack
+
+- Installation de Babel
+Babel via NPM
+@babel/core
+JS => | core | => JS
+
+@babel/cli
+command lign interface
+pour utiliser babel dans le Terminal     
+
+@babel/preset-env
+--> babel.config.js 
+    --> plugins (règle avec impact sur transformation du JS)
+    --> presets (collection de plugin préinstallé)
+
+Récap Babel :
+
+JS => | @babel/core | ==> JS transformé
+       babel.config.js
+       plugins & presets
+
+Création de l'app :
+initaliser npm init -y  ==> package.json
+
+Création fichier index.HTML
+Création babel.config.js
+Créer fichier JS es6.JS
+
+npm i @babel/core @babel/cli @babel/preset-env
+Création du package-lock.json et doc node_modules
+Si je n'ai plus le node_module, juste taper npm i et il se réinstalle
+
+- Insérer script "babel es6.js" dans le package.json
+Lancer babel avec : npm run babel
+Si j'écris "babel es6.js -o es6after.js" après le npm run babel, un nouveau fichier js sera créé.
+
+-- Configuration de babel.config.js
+module.exports = {
+    presets : [["@bebel/preset-env"]]
+}
+==> le fichier es6after.js sera différent 
+
+
+--- 2.9 ---
+Création dossier src où on mettre les fichiers JS avant compilation.
+Remplacer scripts-babel dans package.json
+--> indiquer le fichier source et dist dans lequel on agit via --out-dir ou -o
+
+
+--- 2.10 - Installation de Webpack ---
+installation de Webpack  / webpack-cli  /   webpack-dev-serveur
+Récupération de babel-loader
+
+                    babel-loader pour récupérer contenu du js, le convertir et sortir le bundle
+HTML/JS =>        |   webpack   |       ==> Folder Dist reprenant l'app de production. bundle.js + html
+                    webpack.config.js
+
+installation via npm i webpack webpack-cli webpack-dev-server babel-loader
+
+- Création d'un nouveau fichier webpack.config.js
+voir contenu
+
+- Installation de html-webpack-plugin :
+via npm i html-webpack-plugin
+
+- Insérer script dans package.json
+    script : webpack et start
+
+--- 2.11 - Objet Console de JS ---
+ex :
+console.log('Hello World');
+console.warn('Attention');
+console.error('Oups');

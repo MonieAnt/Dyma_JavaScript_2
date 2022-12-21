@@ -1,0 +1,10 @@
+
+Sommaire :
+
+- Variables ( var, let et const )
+- Hoisting (façon d'interpréter fichier JS)
+- Types
+- Opérateurs
+- Coercition (comprendre comment fonctionne JS)
+- Scope, Contexte d'exécution
+- Référence et valeur

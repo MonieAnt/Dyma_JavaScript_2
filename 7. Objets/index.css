@@ -1,0 +1,15 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.carre {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(207, 175, 0);
+    outline: solid 5px blue;
+    outline-offset: -5px;
+}
